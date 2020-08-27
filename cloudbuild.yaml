@@ -1,0 +1,5 @@
+steps:
+
+- id: "Executando teste"
+  name: 'gcr.io/cloud-builders/go'
+  args: ['test', './src/sum']
