@@ -8,5 +8,14 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/code-education-desafio-ci:latest', '.']
 
+- id: "Fazendo o push da imagem"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/code-education-desafio-ci:latest']
+
+
+- id: "Executando a imagem criada"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['run', 'gcr.io/$PROJECT_ID/code-education-desafio-ci:latest']
+
 images:
 - 'gcr.io/$PROJECT_ID/code-education-desafio-ci:latest'
